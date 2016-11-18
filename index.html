@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="js/jQuery1.7.2.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url:"1.txt",
+                success : function (str) {
+                    $('div').html(str);
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div>测试</div>
+</body>
+</html>
