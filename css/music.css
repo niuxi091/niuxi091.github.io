@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:#ccc;
+    font-size: 14px;
+}
+.head{
+    height: 75px;
+    width: 100%;
+}
+.top{
+    width: 100%;
+    height: 70px;
+    background: url("../img/topbar.png") 0 -80px;
+}
+.rLine{
+    width: 100%;
+    height: 5px;
+    background: url("../img/topbar.png") 0 -230px;
+}
+h1{
+    width: 176px;
+    height: 55px;
+    margin-left:90px;
+    float: left;
+}
+h1 a{
+    display: block;
+    width: 176px;
+    height: 55px;
+    background: url("../img/topbar.png") 0 15px;
+    text-indent: -999px;
+}
+.nav{
+    float: left;
+}
+.nav li{
+    height: 70px;
+    float: left;
+    background: url("../img/topbar.png") no-repeat 0 -300px;
+}
+.nav li a{
+    display: block;
+    padding:0 20px;
+    line-height: 75px;
+}
+.search{
+    width: 210px;
+    height: 30px;
+    background: url("../img/topbar.png") left -550px;
+    float: left;
+    margin-top: 21px;
+    margin-left:100px;
+    text-align: center;
+    line-height: 31px;
+}
+.search input{
+    width: 90%;
+    height: 15px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.content{
+    width: 980px;
+    height: 520px;
+    margin: 0 auto;
+    border-right:1px solid #ccc;
+}
+.list{
+    width: 240px;
+    height: 480px;
+    padding-top: 40px;
+    float: left;
+    border-right:#ccc 1px solid;
+    border-left:1px solid #ccc;
+}
+.music-list{
+    width: 738px;
+    height: 520px;
+    float: left;
+}
+.music-list li{
+    width: 640px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+}
+.music-list li .num{
+    float: left;
+    height: 30px;
+    padding:0 10px;
+    width: 74px;
+}
+.music-list li .num b{
+    float: right;
+    width: 17px;
+    height: 17px;
+    background: url("../img/iconall.png") -20px -60px;
+    margin-top: 5px;
+    cursor:pointer;
+}
+.music-list li .name{
+    float: left;
+    width: 169px;
+    height: 30px;
+    padding:0 10px;
+}
+.music-list li:nth-child(odd){
+    background: #e3e3e3;
+}
+.name a{
+    color:rgb(51,51,51);
+}
+.name a:hover{
+    text-decoration: underline;
+}
+.foot{
+    width: 100%;
+    height: 67px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+.foot .bot{
+    width: 100%;
+    height: 41px;
+    background: url("../img/playbar.png") left -6px;
+    padding-top: 6px;
+}
+.foot .bot .control>div{
+    float: left;
+}
+.foot .tp{
+    height: 20px;
+}
+.play{
+    width: 36px;
+    height: 36px;
+    background: url("../img/playbar.png") -2px -205px;
+    cursor: pointer;
+}
+.control{
+    width: 980px;
+    height: 100%;
+    margin: 0 auto;
+}
+.pre,.next{
+    width: 28px;
+    height: 28px;
+    background: url("../img/playbar.png");
+    cursor: pointer;
+}
+.pre{
+    background-position: -2px -131px;
+    margin: 5px 8px 0 0;
+}
+.next{
+    background-position: -82px -131px;
+    margin: 5px 0 0 8px;
+}
+.statbar{
+    width: 493px;
+    height: 9px;
+    background: url("../img/statbar.png") left top;
+    margin-top: 20px;
+    margin-left: 34px;
+    position: relative;
+}
+.ball{
+    width: 22px;
+    height: 24px;
+    background: url("../img/iconall.png") 0 -251px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -12px;
+}
+.load{
+    width: 0;
+    height: 100%;
+    background: url("../img/statbar.png") 0 -66px;
+}
+.volume{
+    width: 25px;
+    height: 25px;
+    background: url("../img/playbar.png") -5px -250px;
+    margin-top: 8px;
+    margin-left:30px;
+    cursor: pointer;
+    position: relative;
+}
+.volume .vol-line{
+    width: 32px;
+    height: 113px;
+    background: url("../img/playbar.png") left -503px;
+    position: absolute;
+    left: -7px;
+    top: -113px;
+    cursor: default;
+    display: none;
+}
+.vol-ball{
+    width: 14px;
+    height: 14px;
+    background: url("../img/iconall.png") -43px -252px;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    margin-left:-6px;
+    cursor: pointer;
+    z-index:1;
+}
+.vol-load{
+    width: 4px;
+    height: 0;
+    background: url("../img/playbar.png") -40px -523px;
+    position: absolute;
+    left: 14px;
+    bottom: 10px;
+}

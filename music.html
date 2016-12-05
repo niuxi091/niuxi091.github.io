@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/music.css">
+    <script src="js/jQuery1.7.2.min.js"></script>
+    <script>
+        $(function () {
+
+            var arr = ['Don\'t Cry','Shape Of My Heart'];
+            var $audio = $('audio');
+            var $ball = $('.ball');
+            var $stat = $('.statbar');
+            var $doc = $(document);
+            var $vb = $('.vol-ball');
+            var $vl = $('.vol-load');
+            $audio[0].src = 'mp3/Don\'t Cry.mp3';
+            $audio[0].volume = 0.5;
+            $vb.css('top',78/2+14);
+            $vl.css('height',78/2);
+            var bPb = true;
+
+            function playMusic() {
+                $audio[0].src = 'mp3/'+arr[$(this).parent().parent().index()]+'.mp3';
+                $audio[0].play();
+                $('.play').css({
+                    backgroundPosition : '-2px -166px'
+                });
+                bPb = false;
+            }
+
+            for (var i = 0; i < arr.length; i++){
+                var $li = $('<li></li>');
+                $li.html('<div class="num">'+
+                            '<span>'+(i+1)+'</span>'+
+                            '<b></b>'+
+                        '</div>'+
+                        '<div class="name">'+
+                            '<a href="javascript:;">'+arr[i]+'</a>'+
+                        '</div>');
+                $li.appendTo($('.music-list'));
+            }
+
+            $('.music-list li a').click(playMusic);
+            $('.music-list li b').click(playMusic);
+
+            $('.play').click(function () {
+                if (bPb){
+                    $(this).css({
+                        backgroundPosition : '-2px -166px'
+                    });
+                    $audio[0].play();
+                }else{
+                    $(this).css({
+                        backgroundPosition : '-2px -205px'
+                    });
+                    $audio[0].pause();
+                }
+                bPb = !bPb;
+            });
+            $ball.mousedown(function (ev) {
+                var $ball = $(this);
+                var offLeft = $ball.parent().offset().left;
+                var disX = ev.clientX - offLeft - $ball.position().left;
+                $doc.mousemove(function (ev) {
+                    var x = ev.clientX - disX - offLeft;
+                    if (x <= 0){
+                        x = 0;
+                    }else if(x >= $stat.width()-$ball.width()){
+                        x = $stat.width()-$ball.width();
+                    }
+                    $ball.css('left',x+'px');
+                    $('.load').width(x+10);
+                    $audio[0].currentTime = x/($stat.width() - $ball.width())*$audio[0].duration;
+                });
+                $doc.mouseup(function () {
+                    $doc.off('mousemove');
+                    $doc.off('mouseup');
+                });
+
+            });
+            $audio.on('timeupdate',function () {
+                var scale = this.currentTime / this.duration * ($stat.width()-$ball.width());
+                $ball.css('left',scale);
+                $('.load').width(scale+10);
+            });
+            //音量调节
+            $vb.mousedown(function (ev) {
+                var disY = ev.clientY - this.offsetTop;
+                $doc.mousemove(function (ev) {
+                    var y = ev.clientY - disY;
+                    if (y >= 89){
+                        y = 89
+                    }else if(y <= 11){
+                        y = 11;
+                    }
+                    $vb.css('top',y);
+                    $vl.css('height',89-y);
+                    $audio[0].volume = (89-y)/78;
+                });
+                $doc.mouseup(function () {
+                    $doc.off('mousemove');
+                    $doc.off('mouseup');
+                });
+                return false;
+            });
+            $('.volume').click(function (ev) {
+                $('.vol-line').toggle();
+                return false;
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="head">
+        <div class="top">
+            <h1 class="logo">
+                <a href="javascript:;"></a>
+            </h1>
+            <ul class="nav">
+                <li>
+                    <a href="javascript:;">发现音乐</a>
+                </li>
+                <li>
+                    <a href="javascript:;">我的音乐</a>
+                </li>
+                <li>
+                    <a href="javascript:;">朋友</a>
+                </li>
+                <li>
+                    <a href="javascript:;">音乐人</a>
+                </li>
+                <li>
+                    <a href="javascript:;">下载客户端</a>
+                </li>
+            </ul>
+            <div class="search">
+                <input type="text">
+            </div>
+        </div>
+        <div class="rLine"></div>
+    </div>
+    <div class="content">
+        <div class="list"></div>
+        <ul class="music-list">
+
+        </ul>
+    </div>
+    <div class="foot">
+        <div class="tp"></div>
+        <div class="bot">
+            <div class="control">
+                <div class="pre"></div>
+                <div class="play"></div>
+                <div class="next"></div>
+                <div class="statbar">
+                    <div class="ball"></div>
+                    <div class="load"></div>
+                </div>
+                <div class="volume">
+                    <div class="vol-line">
+                        <div class="vol-ball"></div>
+                        <div class="vol-load"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio></audio>
+</body>
+</html>

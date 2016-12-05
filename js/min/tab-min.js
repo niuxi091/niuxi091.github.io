@@ -1,0 +1,1 @@
+define(function(i,t,e){var l=i("bubble");t.tab=function(){var i=$("#tab li");i.click(function(){if(0==$(".sko").offset().left)for(var i=0;i<l.div.lenth;i++)l.div[i].style.animation="";else l.bubble(),console.log(l.div);$(".bb").animate({left:this.offsetWidth*$(this).index()}),$("ol").animate({left:-$(this).index()*$(".card ol li").eq(0).width()})})}});

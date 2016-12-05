@@ -1,0 +1,1 @@
+seajs.use(["ajax","tab","bubble"],function(a,b,u){a.ajax(),b.tab(),u.bub()});

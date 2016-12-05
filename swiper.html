@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/swiper-3.4.0.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- <script src="js/jQuery1.7.2.min.js"></script> -->
+    <style>
+        .all div{
+            width: 300px;height: 200px;
+            border: 1px solid #ccc;
+            text-align: center;
+            font-size: 80px;
+            line-height: 200px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="all">
+        <div class="swiper-slide blue-slide">1111</div>
+        <div class="swiper-slide blue-slide">2222</div>
+        <div class="swiper-slide blue-slide">3333</div>
+    </div>
+</body>
+<script src="js/swiper-3.4.0.min.js"></script>
+<script src="js/swiper.animate1.0.2.min.js"></script>
+<script>
+    var swiper = new Swiper('.all',{
+        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+            swiperAnimateCache(swiper);
+            swiperAnimate(swiper);
+        },
+        onSlideChangeEnd: function(swiper){
+            swiperAnimate(swiper);
+        }
+    });
+</script>
+</html>

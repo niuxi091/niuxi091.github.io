@@ -2,24 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <title>牛曦的个人站</title>
     <script src="js/jQuery1.7.2.min.js"></script>
+    <script src="./js/sea.js" data-main="js/init.js"></script>
     <script>
-        $(function () {
-            $.ajax({
-                url:"1.txt",
-                success : function (str) {
-                    $('div').html(str);
-                }
-            })
-        })
+        window.onload = function () {
 
+        }
     </script>
 </head>
 <body>
-    <div>测试</div>
+    <div class="container-fluid">
+        <ol class="breadcrumb hidden-lg hidden-md" style="margin: 0;">
+            <li><a href="#">个人简介</a></li>
+            <li><a href="#" class="active">案例</a></li>
+        </ol>
+        <div class="row r1">
+            <div class="col-md-3 hidden-xs hidden-sm" style="padding: 0;">
+                <h1><span>N</span>iu<span>X</span>i</h1>
+                <div class="head-por">
+                    <img src="img/self.jpeg" alt="">
+                </div>
+                <div class="animate">
+                    <ul class="clearfix" id="tab">
+                        <li>My Skill</li>
+                        <li>Call Me</li>
+                        <li class="bb"></li>
+                    </ul>
+                    <div class="card">
+                        <ol class="sko" id="sko">
+                            <li class="skill">
+                                <img src="img/computer.png" class="com">
+                                <div class="jq"><img src="img/jq.jpg"></div>
+                                <div class="h5"><img src="img/H5.png"></div>
+                                <div class="an"><img src="img/angular.png"></div>
+                                <div class="sea"><img src="img/sea.png"></div>
+                                <div class="cs"><img src="img/css3.jpg"></div>
+                                <div class="vu"><img src="img/Vue.png"></div>
+                                <div class="boot"><img src="img/boot.png"></div>
+                            </li>
+                            <li></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 con-text" style="padding: 30px 0 0 30px;">
+                <div class="row lst">
+
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
