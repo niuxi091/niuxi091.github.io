@@ -3,11 +3,11 @@
  */
 function $(fn) {
     if (document.addEventListener) {
-        document.addEventListener('DOMCotentLoaded',fn,false);
+        document.addEventListener('DOMContentLoaded',fn,false);
     }else{
         document.onreadystatechange = function () {
-            if (document.readyState == 'complete') {
-                fn && fn ();
+            if (this.readyState == 'complete') {
+                fn && fn();
             }
         }
     }
@@ -241,9 +241,9 @@ $(function () {
             move(oFkc,{left:-1280},{easing:'ease-out'});
         };
     })();
-
 })
-    
+
+
 function findInArr(item,arr) {
     for(var i = 0; i < arr.length; i++)
         if(item == arr[i]) return true;
@@ -262,5 +262,3 @@ function getByClass(oParent,sClass) {
         return arr;
     }
 }
-
-    
