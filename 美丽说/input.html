@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		.all{width: 500px;height: 800px;margin: 30px auto 0;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.clearfix:after{display: block;content: '';clear: both;}
+		li{list-style: none;height: 38px;margin-bottom: 20px;}
+		span{
+			width: 64px;
+			height: 38px;
+			line-height: 38px;
+			font-size:12px;
+			text-align: right;
+			margin-right: 11px;
+		}
+		.o1 input{
+			outline:none;
+			display: block;
+			width: 346px;
+			height: 38px;
+			border: 1px solid #dddddd;
+		}
+		.o2 input{
+			outline:none;
+			display: block;
+			width: 346px;
+			height: 38px;
+			border: 1px solid #dddddd;
+		}
+		.o3 input{
+			outline:none;
+			display: block;
+			width: 176px;
+			height: 38px;
+			border: 1px solid #dddddd;
+		}
+		.o3 img{
+			display: block;
+			border: 1px solid #ddd;
+		}
+	</style>
+</head>
+<body>
+	<div class="all">
+		<form>
+			<ul class="">
+				<li class="clearfix o1">
+					<span class="fl">手机／邮箱</span>
+					<input type="text" name="username" placeholder="手机／邮箱" class="fl" />
+				</li>
+				<li class="clearfix o2">
+					<span class="fl">密码</span>
+					<input type="password" name="password" placeholder="密码" class="fl" />
+				</li>
+				<li class="clearfix o3">
+					<span class="fl">验证码</span>
+					<input type="password" name="password" placeholder="验证码" class="fl" />
+					<img src="img/yanzhengma.png" alt="1" />
+				</li>
+				<li class="clearfix"></li>
+				<li class="clearfix"></li>
+			</ul>
+		</form>
+	</div>
+</body>
+</html>
