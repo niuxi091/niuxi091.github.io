@@ -1,7 +1,18 @@
 /**
  * Created by Neil on 16/10/7.
  */
-window.onload = function () {
+function $(fn) {
+    if (document.addEventListener) {
+        document.addEventListener('DOMCotentLoaded',fn,false);
+    }else{
+        document.onreadystatechange = function () {
+            if (document.readyState == 'complete') {
+                fn && fn ();
+            }
+        }
+    }
+}
+$(function () {
     var oBox = document.getElementById('box');
     var oPh = document.getElementById('ph');
     var oAll = document.getElementById('all');
@@ -248,4 +259,6 @@ function getByClass(oParent,sClass) {
         }
         return arr;
     }
-}
+})
+
+    
