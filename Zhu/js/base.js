@@ -241,7 +241,9 @@ $(function () {
             move(oFkc,{left:-1280},{easing:'ease-out'});
         };
     })();
-};
+
+})
+    
 function findInArr(item,arr) {
     for(var i = 0; i < arr.length; i++)
         if(item == arr[i]) return true;
@@ -259,6 +261,6 @@ function getByClass(oParent,sClass) {
         }
         return arr;
     }
-})
+}
 
     
