@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+    <script src="js/base.js"></script>
+    <script>
+        (function (win, doc) {
+            function fontSize() {
+                doc.documentElement.style.fontSize = doc.documentElement.clientWidth*20/320 + 'px';
+            }
+            fontSize();
+            win.addEventListener('resize',fontSize,false);
+        })(window,document);
+
+        domReady(function () {
+
+            //--------------
+            var oUl = document.querySelector('#banner');
+            var oUl2 = document.querySelector('.hd');
+            var aLi = oUl.children;
+            var aLic = oUl2.children;
+            var x = 0,iNow = -1,bReady = true,lw = aLi[0].offsetWidth,doc = document;
+            var timer = null;
+            function pointTab() {
+                for (var i = 0; i < aLic.length; i++){
+                    aLic[i].className = '';
+                }
+                if (iNow == 0){
+                    aLic[aLic.length-1].className = 'on';
+                    return;
+                }
+                aLic[(Math.abs(iNow+1)%4)].classList.add('on');
+            }
+            function tab(iNow,arg2) {
+                x = iNow*lw;
+                oUl.style.transition = '0.3s';
+                oUl.style.transform = 'translate3d('+x+'px,0,0)';
+            }
+            pointTab();
+            tab(iNow,false);
+            oUl.addEventListener('touchstart',function (ev) {
+                clearInterval(timer);
+                if (!bReady) return;
+                bReady = false;
+                oUl.style.transition = 'none';
+                var cX = ev.targetTouches[0].clientX;
+                var disX = cX - x;
+                doc.addEventListener('touchmove',move,false);
+                doc.addEventListener('touchend',end,false);
+
+                function move(ev) {
+                    x = ev.targetTouches[0].clientX - disX;
+                    oUl.style.transform = 'translateX('+x+'px)';
+                }
+                function end(ev) {
+                    var upX = ev.changedTouches[0].clientX;
+                    if (Math.abs(upX - cX) > lw/6){
+                        upX < cX? iNow-- : iNow++;
+                    }
+                    tab(iNow,true);
+                    pointTab();
+                    doc.removeEventListener('touchmove',move,false);
+                    doc.removeEventListener('touchend',end,false);
+                    timer = setInterval(function () {
+                        iNow--;
+                        tab(iNow,true);
+                        pointTab();
+                    },3000);
+                }
+                ev.preventDefault();
+            },false);
+            timer = setInterval(function () {
+                iNow--;
+                tab(iNow,true);
+                pointTab();
+            },3000);
+            oUl.addEventListener('transitionend',function () {
+                bReady = true;
+                oUl.style.transition = 'none';
+                if(x == 0) iNow = -4;
+                if (x == (aLi.length-1)*-lw) iNow = -1;
+                x = iNow*lw;
+                oUl.style.transform = 'translate3d('+x+'px,0,0)';
+            },false);
+
+            //--------------
+            init();
+        });
+    </script>
+</head>
+<body>
+<header>
+    <a href="javascript:;"></a>
+    <h1>聚划算</h1>
+</header>
+<section class="tab">
+    <div class="bd">
+        <ul id="banner">
+            <li><img src="img/4.jpg" alt=""></li>
+            <li><img src="img/1.jpg" alt=""></li>
+            <li><img src="img/2.jpg" alt=""></li>
+            <li><img src="img/3.jpg" alt=""></li>
+            <li><img src="img/4.jpg" alt=""></li>
+            <li><img src="img/1.jpg" alt=""></li>
+        </ul>
+    </div>
+    <ul class="hd">
+        <li class="on"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</section>
+<section class="list">
+    <ul>
+        <li>
+            <a href="javascript:;" class="ic1"></a><br>
+            <a href="javascript:;">商品</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="ic2"></a><br>
+            <a href="javascript:;">生活</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="ic3"></a><br>
+            <a href="javascript:;">品牌</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="ic4"></a><br>
+            <a href="javascript:;">聚宝盆</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="ic5"></a><br>
+            <a href="javascript:;">聚名品</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="ic6"></a><br>
+            <a href="javascript:;">聚家装</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="ic7"></a><br>
+            <a href="javascript:;">聚透</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="ic8"></a><br>
+            <a href="javascript:;">客户端</a>
+        </li>
+    </ul>
+</section>
+<section class="content">
+    <div class="title">
+        <h2>聚划算热卖排行</h2>
+        <p>TOP 10</p>
+    </div>
+    <ol class="top"></ol>
+    <div class="box">更多划算  逛起来！</div>
+</section>
+<section class="dw">
+    <div class="dl"><p>IOS客户端</p></div>
+    <div class="dl"><p>安卓客户端</p></div>
+    <div class="dl"><p>意见反馈</p></div>
+</section>
+<footer>
+    <div class="login">
+        <a href="javascript:;">登录</a>
+        <a href="javascript:;">注册</a>
+        <p>TOP</p>
+    </div>
+    <div class="foot">
+        <a href="javascript:;">标准版</a>
+        <a href="javascript:;">电脑版</a>
+        <p>©2013 浙B2-20080224   服务中心</p>
+    </div>
+</footer>
+</body>
+</html>
