@@ -1,0 +1,483 @@
+body,h1,h2,h3,p,ul,ol,dl{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:'Microsoft YaHei';
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+b{
+    font-weight:normal;
+    display: inline-block;
+    color:#999;
+    margin: 0 10px;
+}
+img{
+    vertical-align: top;
+}
+.wrap{
+    margin: 0 auto;
+    width: 1025px;
+    overflow: hidden;
+}
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.clearfix{
+    zoom: 1;
+}
+/** 分割 **/
+header .top-bar{
+    background: #f6f6f6;
+    border-bottom:1px solid #dcdcdc;
+}
+header .top-bar .wrap{
+    width: 1025px;
+    height: 33px;
+    line-height: 33px;
+}
+header .top-bar .wrap span{
+    color:#999;
+}
+header .top-bar .wrap a{
+    color:#00c901;
+}
+header .top-bar .wrap a:hover{
+    text-decoration: underline;
+}
+/** 头部logo及导航 **/
+header .header-n{
+    border-bottom:1px solid #d9dadc;
+}
+header .header-n .wrap{
+    height: 60px;
+}
+header .header-n .wrap .logo h1{
+    width: 232px;
+    float: left;
+}
+header .header-n .wrap .logo h1 a{
+    display: block;
+    height: 40px;
+    margin-top: 12px;
+    text-indent: -9999px;
+    background: url("../img/logo.png") no-repeat;
+}
+header .header-n .wrap .nav{
+    float: right;
+    line-height: 60px;
+}
+header .header-n .wrap .nav a{
+    color:#222;
+    font-size:14px;
+}
+header .header-n .wrap .nav .help-center{
+    display: inline-block;
+    position: relative;
+}
+header .header-n .wrap .nav .help-center a{
+    display: inline-block;
+    width: 75px;
+    height: 60px;
+}
+header .header-n .wrap .nav .help-center span{
+    position: absolute;
+    right: 6px;
+    top: 29px;
+    border-color: #c2c2c2 transparent transparent;
+    border-style: solid dashed dashed;
+    border-width: 4px 4px 0;
+    font-size: 0;
+    height: 0;
+    width: 0;
+    line-height: 0;
+    z-index:10;
+}
+.inner{
+    display: none;
+}
+header .header-n .wrap .nav .show .inner{
+    width: 131px;
+    border:1px solid #e7e7eb;
+    position: absolute;
+    top: 59px;
+    left: -97px;
+    padding: 14px 20px;
+    line-height: 26px;
+    background: #fff;
+    display: block;
+    z-index:8;
+}
+header .header-n .wrap .nav .show a{
+    background: #fff;
+    position: relative;
+    z-index:9;
+    border-left:1px solid #e7e7eb;
+    border-right:1px solid #e7e7eb;
+    padding-left: 16px;
+    margin:0 -1px 0 -17px;
+}
+header .header-n .wrap .nav .show span{
+    transform: rotate(180deg);
+    transition: 0.3s;
+}
+header .header-n .wrap .nav .show .inner p{
+    font-size:12px;
+    color:#999;
+}
+header .header-n .wrap .nav .show .inner .tel{
+    color:#333;
+    font-size: 18px;
+}
+/** 轮播图 **/
+.banner{
+    height: 410px;
+    position: relative;
+}
+.banner .banner-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.banner .banner-img ul{
+    position: relative;
+    height: 100%;
+}
+.banner .banner-img ul li{
+    width: 100%;
+    height: 100%;
+    background: url("../img/0.jpeg") no-repeat center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.banner .banner-img ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.banner .banner-img ol{
+    padding: 16px 16px 16px 0;
+    position: absolute;
+    left: 50%;
+    bottom:0px;
+    margin-left:-73px;
+}
+.banner .banner-img ol li{
+    float: left;
+    width: 10px;
+    height: 10px;
+    margin-left: 16px;
+    border-radius: 50%;
+    background: #fff;
+}
+.banner .banner-img ol .on{
+    background: #44B549;
+}
+.banner .wrap{
+    height: 100%;
+    position: relative;
+}
+.banner .wrap .login{
+    float: right;
+    width: 314px;
+    margin-top: 20px;
+    padding: 15px 15px 20px;
+    background: rgba(255,255,255,0.8);
+    position: relative;
+    border: 1px solid #fff;
+}
+.banner .wrap .login h2{
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 400;
+    color:#000;
+}
+.banner .wrap .login .username,.password{
+    height: 42px;
+    line-height: 42px;
+    padding: 3px 0;
+    background: #fff;
+    border-left: 1px solid #cecece;
+    border-top: 1px solid #cecece;
+    position: relative;
+    padding-left: 54px;
+}
+.banner .wrap .login div input{
+    outline:none;
+    vertical-align: middle;
+    border: none;
+    font-size: 14px;
+    width: 259px;
+}
+.banner .wrap .login .password{
+    margin:10px 0;
+}
+.banner .wrap .login form label{
+    width: 20px;
+    height: 20px;
+    text-indent:-9999px;
+    position: absolute;
+    left: 20px;
+    top: 30%;
+    background: url("../img/base.png") no-repeat;
+}
+.banner .wrap .login .username label{
+    background-position: 0 0;
+}
+.banner .wrap .login .password label{
+    background-position: 0 -26px;
+}
+.banner .wrap .login .verify{
+    margin-bottom: 10px;
+    height: 38px;
+}
+.banner .wrap .login .verify input{
+    width: 100px;
+    padding: 10px;
+    vertical-align: middle;
+    border-left: 1px solid #cecece;
+    border-top: 1px solid #cecece;
+}
+.banner .wrap .login .verify img{
+    width: 100px;
+    height: 40px;
+    margin: 0 11px;
+    vertical-align: middle;
+}
+.banner .wrap .login .verify a{
+    color:#333;
+}
+.banner .wrap .login .verify a:hover{
+    color:#459ae9;
+    text-decoration: underline;
+}
+.banner .wrap .login .memory{
+    margin-bottom: 20px;
+    overflow: hidden;
+    font-size: 14px;
+}
+.banner .wrap .login .memory i{
+    float: left;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: 2px 6px 0 0;
+    cursor: pointer;
+    background: #fff url("../img/base.png") no-repeat 0 -54px;
+    vertical-align: middle;
+}
+.banner .wrap .login .memory label{
+    float: left;
+}
+.banner .wrap .login .memory a{
+    color:#333;
+    float: right;   
+}
+.banner .wrap .login .memory a:hover{
+    color:#459ae9;
+    text-decoration: underline;
+}
+.banner .wrap .login .login-btn{
+    display: inline-block;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background-color: #00c800;
+    color: #fff;
+    border: 1px solid #44b549;
+    text-align: center;
+    font-size: 20px;
+}
+.banner .wrap .login .login-btn:hover{
+    background: #2F9833;
+}
+/** 内容 **/
+.container{
+    color:#222;
+    margin-top: 25px;
+    font-size: 14px;
+}
+.container .notice h2{
+    float: left;
+    background: #595B5B;
+    color:#fff;
+    font-size: 14px;
+    padding:0 4px;
+}
+.container .notice ul{
+    float: left;
+    line-height: 20px;
+}
+.container .notice ul li{
+    float: left;
+    margin-left: 18px;
+    width: 275px;
+}
+.container .notice ul li span{
+    float: left;
+    color: #999;
+    margin-right: 5px;
+}
+.container .notice ul li a{
+    display: inline-block;
+    max-width: 205px;
+    _width: 205px;
+    height: 21px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    color:#222;
+}
+.container .notice ul li a:hover{
+    color:#459ae9;
+    text-decoration: underline;
+}
+.container .notice .more{
+    float: left;
+    color:#222;
+}
+.container .notice .more:hover{
+    color: #459ae9;
+    text-decoration: underline;
+}
+.container .title{
+    margin-top: 45px;
+}
+.container .title h2{
+    font-size: 20px;
+    font-weight: normal;
+    color: #333;
+    background: #fff;
+    margin-top: -15px;
+    padding-right: 10px;
+}
+.container .guide{
+    margin:37px 0 5px 0;
+}
+.container .guide ul li {
+    float: left;
+    width: 240px;
+    height: 266px;
+    background-color: #FFFFFF;
+    margin-right: 21px;
+    text-align: center;
+}
+.container .guide ul li:last-child{
+    margin: 0;
+}
+.container .guide ul li a{
+    width: 239px;
+    height: 266px;
+    display: block;
+    position: relative;
+    border: 1px solid #e5e5e5;
+}
+.container .guide ul li a:hover{
+    border: 1px solid #00c800;
+}
+.container .guide ul li a:hover .ico{
+    margin-top:45px;
+}
+.container .guide ul li a:hover .ico-btn{
+    display: block;
+}
+.container .guide ul li a .ico{
+    display: inline-block;
+    margin-top: 72px;
+    width: 73px;
+    height: 57px;
+    background: url("../img/base.png") no-repeat;
+    transition: 0.2s linear;
+}
+.container .guide ul li:first-child a .ico{
+    background-position: 2px -159px;
+}
+.container .guide ul li:nth-child(2) a .ico{
+    background-position: 8px -366px;
+}
+.container .guide ul li:nth-child(3) a .ico{
+    background-position: 4px -230px;
+}
+.container .guide ul li:last-child a .ico{
+    background-position: 8px -294px;
+}
+.container .guide ul li a h3{
+    color: #000000;
+    font-size: 16px;
+    line-height: 1;
+    margin-top: 25px;
+    font-weight: normal;
+}
+.container .guide ul li a p{
+    color: #999;
+    font-size: 12px;
+    line-height: 1;
+    margin-top: 14px;
+}
+.container .guide ul li a .ico-btn{
+    margin: 20px auto 0;
+    width: 191px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #00C800;
+    font-size: 14px;
+    color: #FFFFFF;
+    border-bottom: 1px solid #00A000;
+    display: none;
+}
+.container .through{
+    height: 326px;
+    margin-top: 20px;
+    padding-bottom: 35px;
+    border-bottom: 1px dotted #ccc;
+    background: url("../img/qrcode.png") no-repeat center top;
+}
+.container .through ul {
+    position: relative;
+}
+.container .through ul li{
+    font-size: 16px;
+    margin-top: 58px;
+    margin-left: 68px;
+    position: absolute;
+}
+.container .through ul .l02{
+    margin-top: 143px;
+}
+.container .through ul .l03{
+    margin-top: 228px;
+}
+.container .through ul .l04{
+    margin-left: 748px;
+}
+.container .through ul .l05{
+    margin-top: 143px;
+    margin-left: 755px;
+}
+.container .through ul .l06{
+    margin-top: 228px;
+    margin-left: 755px;
+}
+/** 页尾 **/
+footer{
+    text-align: center;
+    padding-bottom: 20px;
+    color: #999999;
+    font-size: 12px;
+    margin-top: 25px;
+}
+footer p{
+    margin-bottom: 8px;
+}
+footer a{
+    color: #999999;
+    font-size: 12px;
+}

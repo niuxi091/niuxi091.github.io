@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/base.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="wrap">
+                <span>境内业务</span>
+                <b>|</b>
+                <a href="javascript:void(0);">International business</a>
+            </div>
+        </div>
+        <div class="header-n">
+            <div class="wrap">
+                <div class="logo">
+                    <h1>
+                        <a href="javascript:void(0);">
+                            微信支付商户平台
+                        </a>
+                    </h1>
+                </div>
+                <div class="nav">
+                    <a href="javascript:void(0);">服务商</a>
+                    <b>|</b>
+                    <a href="javascript:void(0);">接入指引</a>
+                    <b>|</b>
+                    <a href="javascript:void(0);">开发文档</a>
+                    <b>|</b>
+                    <div class="help-center">
+                        <a href="javascript:void(0);">帮助中心</a>
+                        <span></span>
+                        <div class="inner">
+                            <ul>
+                                <li>
+                                    <p class="tel">客服：95017</p>
+                                    <p>周一到周五 09:00-18:00</p>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            //帮助中心下拉列表
+            var oHelp = document.querySelector('.help-center');
+            oHelp.onmouseover = function () {
+                this.classList.add('show');
+                this.onmouseout = function () {
+                    this.classList.remove('show');
+                };
+            }
+        </script>
+    </header>
+    <section class="banner">
+        <div class="banner-img">
+            <ul>
+                <li>
+                    <a href="javascript:void(0);">
+                    </a>
+                </li>
+                <li><a href="javascript:void(0);"></a></li>
+                <li><a href="javascript:void(0);"></a></li>
+                <li><a href="javascript:void(0);"></a></li>
+                <li><a href="javascript:void(0);"></a></li>
+            </ul>
+            <ol>
+                <li class="on"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+        <div class="wrap">
+            <div class="login">
+                <h2>商户登录</h2>
+                <div class="login-form">
+                    <form action="" method="post">
+                        <div class="username">
+                            <label for="username">登录账号</label>
+                            <input type="text" id="username" placeholder="登陆账号">
+                        </div>
+                        <div class="password">
+                            <label for="password">登录密码</label>
+                            <input type="text" id="password" placeholder="登录密码">
+                        </div>
+                        <div class="verify">
+                            <input type="text" placeholder="验证码">
+                            <img class="img-verify change-verify" src="./img/getimage.jpeg">
+                            <a href="javascript:void(0);">换一张</a>
+                        </div>
+                    </form>
+                    <div class="memory">
+                        <label id="memory-username-label">
+                            <i id="memory-username"></i>
+                            记住账号
+                        </label>
+                        <a href="javascript:void(0);">忘记密码？</a>
+                        <script>
+                            //记住账号自定义单选框
+                            var oI = document.querySelector('#memory-username');
+                            var oL = document.querySelector('#memory-username-label');
+                            var bC = true;
+                            oL.onclick = function () {
+                                if (bC){
+                                    oI.style.backgroundPosition = '0 -80px';
+                                }else{
+                                    oI.style.backgroundPosition = '0 -54px';
+                                }
+                                bC = !bC;
+                                return false;
+                            }
+
+
+                        </script>
+                    </div>
+                    <a href="javascript:void(0);" class="login-btn">登录</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="wrap">
+            <div class="notice clearfix">
+                <h2>最新公告</h2>
+                <ul>
+                    <li>
+                        <span>[12.12]</span>
+                        <a href="javascript:void(0);">【维护通知】12月13日微信支付升级</a>
+                    </li>
+                    <li>
+                        <span>[12.05]</span>
+                        <a href="javascript:void(0);">12月6日微信支付退款业务维护通知</a>
+                    </li>
+                    <li>
+                        <span>[11.30]</span>
+                        <a href="javascript:void(0);">《商户平台使用手册》正式上线</a>
+                    </li>
+                </ul>
+                <a href="javascript:void(0);" class="more">更多公告>></a>
+            </div>
+            <div class="title clearfix">
+                <h2>接入微信支付</h2>
+            </div>
+            <div class="guide clearfix">
+                <ul class="clearfix">
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="ico"></span>
+                            <h3>公众号支付</h3>
+                            <p>在微信内的商家页面上完成公众号支付</p>
+                            <span class="ico-btn">我要接入</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="ico"></span>
+                            <h3>APP支付</h3>
+                            <p>在APP中，调起微信进行APP支付</p>
+                            <span class="ico-btn">我要接入</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="ico"></span>
+                            <h3>扫码支付</h3>
+                            <p>扫描二维码进行扫码支付</p>
+                            <span class="ico-btn">我要接入</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="ico"></span>
+                            <h3>刷卡支付</h3>
+                            <p>用户展示条码，商户扫描完成刷卡支付</p>
+                            <span class="ico-btn">我要接入</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="title clearfix">
+                <h2>微信支付商户通</h2>
+            </div>
+            <div class="through">
+                <ul>
+                    <li class="l01">如何快速接入微信支付</li>
+                    <li class="l02">了解最新的支付技术接口</li>
+                    <li class="l03">微信商户后台操作有疑问？</li>
+                    <li class="l04">微信现金红包怎么玩？</li>
+                    <li class="l05">掌握最新的微信行业解决方案</li>
+                    <li class="l06">获取一手的微信支付官方动态</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="wrap">
+            <p>
+                <a href="javascript:void(0);">关于财付通</a>
+                <b>|</b>
+                <a href="javascript:void(0);">平台使用协议</a>
+                <b>|</b>
+                <a href="javascript:void(0);">支付服务协议</a>
+                <b>|</b>
+                Powered By Tencent & Tenpay　Copyright© 2005-2016 Tenpay All Rights Reserved.
+            </p>
+            <p>
+                <a href="javascript:void(0);">微信</a>
+                <b>|</b>
+                <a href="javascript:void(0);">微信公众平台</a>
+                <b>|</b>
+                <a href="javascript:void(0);">微信开放平台</a>
+                <b>|</b>
+                <a href="javascript:void(0);">广点通</a>
+                <b>|</b>
+                <a href="javascript:void(0);">腾讯开放平台</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
