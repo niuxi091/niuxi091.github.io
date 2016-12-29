@@ -23,7 +23,7 @@ img{
 .wrap{
     margin: 0 auto;
     width: 1025px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 .clearfix:after{
     content: '';
