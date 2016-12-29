@@ -4,6 +4,6 @@
     {title : '[静态]爱奇艺首页',href : 'iQiyi/index.html' ,content : '爱奇艺首页',img : 'img/iQiyi.png'},
     {title : '[静态]美丽说首页',href : '美丽说/index.html' ,content : '美丽说首页',img : 'img/meilishuo.png'},
     {title : '[静态]猪八戒网首页',href : 'Zhu/index.html' ,content : '猪八戒首页',img : 'img/zhu.png'},
-    {title : '[移动端]聚划算',href :'juhuasuan/index.html',content :'聚划算首页' , img : 'img/ju.png’},
+    {title : '[移动端]聚划算',href :'juhuasuan/index.html',content :'聚划算首页' , img : 'img/ju.png'},
     {title : '[静态]微信支付页面',href : 'WechatPay/index.html',content:'微信支付首页',img : 'img/WechatPay.png'}
 ]
