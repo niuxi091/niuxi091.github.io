@@ -129,7 +129,7 @@ h1 span {
   top: 0;
 }
 .animate .card ol li img.com {
-  width: 250px;
+  width: 88%;
   margin-top: 100px;
 }
 .animate .card ol li div {
@@ -146,32 +146,32 @@ h1 span {
   width: 100%;
 }
 .animate .card ol li .h5 {
-  left: 50px;
-  top: 120px;
+  left: 15.6%;
+  top: 32%;
 }
 .animate .card ol li .an {
-  left: 140px;
-  top: 170px;
+  left: 44%;
+  top: 45.6%;
 }
 .animate .card ol li .cs {
-  left: 230px;
-  top: 60px;
+  left: 72%;
+  top: 16%;
 }
 .animate .card ol li .vu {
-  left: 218px;
-  top: 167px;
+  left: 68%;
+  top: 45%;
 }
 .animate .card ol li .sea {
-  left: 83px;
-  top: 230px;
+  left: 26%;
+  top:62%;
 }
 .animate .card ol li .jq {
-  left: 151px;
-  top: 80px;
+  left: 47%;
+  top: 22%;
 }
 .animate .card ol li .boot {
-  left: 210px;
-  top: 260px;
+  left: 66%;
+  top: 70%;
 }
 @media screen and (max-width: 992px) {
   .con-text {
